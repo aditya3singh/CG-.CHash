@@ -1,0 +1,15 @@
+C:\Users\singh\Downloads\.NET\ThirdD\obj\Debug\net10.0\ThirdD.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\singh\Downloads\.NET\ThirdD\obj\Debug\net10.0\ThirdD.AssemblyInfoInputs.cache
+C:\Users\singh\Downloads\.NET\ThirdD\obj\Debug\net10.0\ThirdD.AssemblyInfo.cs
+C:\Users\singh\Downloads\.NET\ThirdD\obj\Debug\net10.0\ThirdD.csproj.CoreCompileInputs.cache
+C:\Users\singh\Downloads\.NET\ThirdD\obj\Debug\net10.0\ThirdD.sourcelink.json
+C:\Users\singh\Downloads\.NET\ThirdD\bin\Debug\net10.0\ThirdD.exe
+C:\Users\singh\Downloads\.NET\ThirdD\bin\Debug\net10.0\ThirdD.deps.json
+C:\Users\singh\Downloads\.NET\ThirdD\bin\Debug\net10.0\ThirdD.runtimeconfig.json
+C:\Users\singh\Downloads\.NET\ThirdD\bin\Debug\net10.0\ThirdD.dll
+C:\Users\singh\Downloads\.NET\ThirdD\bin\Debug\net10.0\ThirdD.pdb
+C:\Users\singh\Downloads\.NET\ThirdD\obj\Debug\net10.0\ThirdD.dll
+C:\Users\singh\Downloads\.NET\ThirdD\obj\Debug\net10.0\refint\ThirdD.dll
+C:\Users\singh\Downloads\.NET\ThirdD\obj\Debug\net10.0\ThirdD.pdb
+C:\Users\singh\Downloads\.NET\ThirdD\obj\Debug\net10.0\ThirdD.genruntimeconfig.cache
+C:\Users\singh\Downloads\.NET\ThirdD\obj\Debug\net10.0\ref\ThirdD.dll
