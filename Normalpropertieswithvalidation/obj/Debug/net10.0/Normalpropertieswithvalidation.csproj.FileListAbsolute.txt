@@ -1,0 +1,15 @@
+C:\Users\singh\Downloads\.NET\Normalpropertieswithvalidation\bin\Debug\net10.0\Normalpropertieswithvalidation.exe
+C:\Users\singh\Downloads\.NET\Normalpropertieswithvalidation\bin\Debug\net10.0\Normalpropertieswithvalidation.deps.json
+C:\Users\singh\Downloads\.NET\Normalpropertieswithvalidation\bin\Debug\net10.0\Normalpropertieswithvalidation.runtimeconfig.json
+C:\Users\singh\Downloads\.NET\Normalpropertieswithvalidation\bin\Debug\net10.0\Normalpropertieswithvalidation.dll
+C:\Users\singh\Downloads\.NET\Normalpropertieswithvalidation\bin\Debug\net10.0\Normalpropertieswithvalidation.pdb
+C:\Users\singh\Downloads\.NET\Normalpropertieswithvalidation\obj\Debug\net10.0\Normalpropertieswithvalidation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\singh\Downloads\.NET\Normalpropertieswithvalidation\obj\Debug\net10.0\Normalpropertieswithvalidation.AssemblyInfoInputs.cache
+C:\Users\singh\Downloads\.NET\Normalpropertieswithvalidation\obj\Debug\net10.0\Normalpropertieswithvalidation.AssemblyInfo.cs
+C:\Users\singh\Downloads\.NET\Normalpropertieswithvalidation\obj\Debug\net10.0\Normalpropertieswithvalidation.csproj.CoreCompileInputs.cache
+C:\Users\singh\Downloads\.NET\Normalpropertieswithvalidation\obj\Debug\net10.0\Normalpropertieswithvalidation.sourcelink.json
+C:\Users\singh\Downloads\.NET\Normalpropertieswithvalidation\obj\Debug\net10.0\Normalpropertieswithvalidation.dll
+C:\Users\singh\Downloads\.NET\Normalpropertieswithvalidation\obj\Debug\net10.0\refint\Normalpropertieswithvalidation.dll
+C:\Users\singh\Downloads\.NET\Normalpropertieswithvalidation\obj\Debug\net10.0\Normalpropertieswithvalidation.pdb
+C:\Users\singh\Downloads\.NET\Normalpropertieswithvalidation\obj\Debug\net10.0\Normalpropertieswithvalidation.genruntimeconfig.cache
+C:\Users\singh\Downloads\.NET\Normalpropertieswithvalidation\obj\Debug\net10.0\ref\Normalpropertieswithvalidation.dll

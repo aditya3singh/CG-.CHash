@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "Normalpropertieswithvalidation/1.0.0": {
+        "runtime": {
+          "Normalpropertieswithvalidation.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Normalpropertieswithvalidation/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
