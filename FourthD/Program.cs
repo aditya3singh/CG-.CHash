@@ -11,13 +11,17 @@ class Program
         // acc.Deposit(500);
         // acc.ShowBalance();
 
-        Product p = new Product
-        {
-            Name = "Laptop",
-            Price = 50000
-        };
+        // Product p = new Product
+        // {
+        //     Name = "Laptop",
+        //     Price = 50000
+        // };
 
-        Console.WriteLine("Product Name: " + p.Name);
-        Console.WriteLine("Product Price: " + p.Price);
+        // Console.WriteLine("Product Name: " + p.Name);
+        // Console.WriteLine("Product Price: " + p.Price);
+
+        
+        Student s = new Student("Aditya", 21, 101);
+        s.ShowStudent();
     }
 }

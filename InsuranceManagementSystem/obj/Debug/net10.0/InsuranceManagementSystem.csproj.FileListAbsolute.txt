@@ -1,0 +1,15 @@
+C:\Users\singh\Downloads\.NET\InsuranceManagementSystem\bin\Debug\net10.0\InsuranceManagementSystem.exe
+C:\Users\singh\Downloads\.NET\InsuranceManagementSystem\bin\Debug\net10.0\InsuranceManagementSystem.deps.json
+C:\Users\singh\Downloads\.NET\InsuranceManagementSystem\bin\Debug\net10.0\InsuranceManagementSystem.runtimeconfig.json
+C:\Users\singh\Downloads\.NET\InsuranceManagementSystem\bin\Debug\net10.0\InsuranceManagementSystem.dll
+C:\Users\singh\Downloads\.NET\InsuranceManagementSystem\bin\Debug\net10.0\InsuranceManagementSystem.pdb
+C:\Users\singh\Downloads\.NET\InsuranceManagementSystem\obj\Debug\net10.0\InsuranceManagementSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\singh\Downloads\.NET\InsuranceManagementSystem\obj\Debug\net10.0\InsuranceManagementSystem.AssemblyInfoInputs.cache
+C:\Users\singh\Downloads\.NET\InsuranceManagementSystem\obj\Debug\net10.0\InsuranceManagementSystem.AssemblyInfo.cs
+C:\Users\singh\Downloads\.NET\InsuranceManagementSystem\obj\Debug\net10.0\InsuranceManagementSystem.csproj.CoreCompileInputs.cache
+C:\Users\singh\Downloads\.NET\InsuranceManagementSystem\obj\Debug\net10.0\InsuranceManagementSystem.sourcelink.json
+C:\Users\singh\Downloads\.NET\InsuranceManagementSystem\obj\Debug\net10.0\InsuranceManagementSystem.dll
+C:\Users\singh\Downloads\.NET\InsuranceManagementSystem\obj\Debug\net10.0\refint\InsuranceManagementSystem.dll
+C:\Users\singh\Downloads\.NET\InsuranceManagementSystem\obj\Debug\net10.0\InsuranceManagementSystem.pdb
+C:\Users\singh\Downloads\.NET\InsuranceManagementSystem\obj\Debug\net10.0\InsuranceManagementSystem.genruntimeconfig.cache
+C:\Users\singh\Downloads\.NET\InsuranceManagementSystem\obj\Debug\net10.0\ref\InsuranceManagementSystem.dll
