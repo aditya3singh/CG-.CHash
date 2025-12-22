@@ -1,0 +1,15 @@
+C:\Users\singh\Downloads\.NET\AssignmentComplex\bin\Debug\net10.0\AssignmentComplex.exe
+C:\Users\singh\Downloads\.NET\AssignmentComplex\bin\Debug\net10.0\AssignmentComplex.deps.json
+C:\Users\singh\Downloads\.NET\AssignmentComplex\bin\Debug\net10.0\AssignmentComplex.runtimeconfig.json
+C:\Users\singh\Downloads\.NET\AssignmentComplex\bin\Debug\net10.0\AssignmentComplex.dll
+C:\Users\singh\Downloads\.NET\AssignmentComplex\bin\Debug\net10.0\AssignmentComplex.pdb
+C:\Users\singh\Downloads\.NET\AssignmentComplex\obj\Debug\net10.0\AssignmentComplex.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\singh\Downloads\.NET\AssignmentComplex\obj\Debug\net10.0\AssignmentComplex.AssemblyInfoInputs.cache
+C:\Users\singh\Downloads\.NET\AssignmentComplex\obj\Debug\net10.0\AssignmentComplex.AssemblyInfo.cs
+C:\Users\singh\Downloads\.NET\AssignmentComplex\obj\Debug\net10.0\AssignmentComplex.csproj.CoreCompileInputs.cache
+C:\Users\singh\Downloads\.NET\AssignmentComplex\obj\Debug\net10.0\AssignmentComplex.sourcelink.json
+C:\Users\singh\Downloads\.NET\AssignmentComplex\obj\Debug\net10.0\AssignmentComplex.dll
+C:\Users\singh\Downloads\.NET\AssignmentComplex\obj\Debug\net10.0\refint\AssignmentComplex.dll
+C:\Users\singh\Downloads\.NET\AssignmentComplex\obj\Debug\net10.0\AssignmentComplex.pdb
+C:\Users\singh\Downloads\.NET\AssignmentComplex\obj\Debug\net10.0\AssignmentComplex.genruntimeconfig.cache
+C:\Users\singh\Downloads\.NET\AssignmentComplex\obj\Debug\net10.0\ref\AssignmentComplex.dll

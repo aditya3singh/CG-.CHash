@@ -1,0 +1,15 @@
+C:\Users\singh\Downloads\.NET\FourthD\obj\Debug\net10.0\FourthD.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\singh\Downloads\.NET\FourthD\obj\Debug\net10.0\FourthD.AssemblyInfoInputs.cache
+C:\Users\singh\Downloads\.NET\FourthD\obj\Debug\net10.0\FourthD.AssemblyInfo.cs
+C:\Users\singh\Downloads\.NET\FourthD\obj\Debug\net10.0\FourthD.csproj.CoreCompileInputs.cache
+C:\Users\singh\Downloads\.NET\FourthD\obj\Debug\net10.0\FourthD.sourcelink.json
+C:\Users\singh\Downloads\.NET\FourthD\bin\Debug\net10.0\FourthD.exe
+C:\Users\singh\Downloads\.NET\FourthD\bin\Debug\net10.0\FourthD.deps.json
+C:\Users\singh\Downloads\.NET\FourthD\bin\Debug\net10.0\FourthD.runtimeconfig.json
+C:\Users\singh\Downloads\.NET\FourthD\bin\Debug\net10.0\FourthD.dll
+C:\Users\singh\Downloads\.NET\FourthD\bin\Debug\net10.0\FourthD.pdb
+C:\Users\singh\Downloads\.NET\FourthD\obj\Debug\net10.0\FourthD.dll
+C:\Users\singh\Downloads\.NET\FourthD\obj\Debug\net10.0\refint\FourthD.dll
+C:\Users\singh\Downloads\.NET\FourthD\obj\Debug\net10.0\FourthD.pdb
+C:\Users\singh\Downloads\.NET\FourthD\obj\Debug\net10.0\FourthD.genruntimeconfig.cache
+C:\Users\singh\Downloads\.NET\FourthD\obj\Debug\net10.0\ref\FourthD.dll
