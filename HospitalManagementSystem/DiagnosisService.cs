@@ -15,8 +15,6 @@ class DiagnosisService
                 total += s;
             return total / testScores.Length;
         }
-
-        // Static local function
         static string Risk(int avg)
         {
             return avg > 70 ? "High" : "Low";

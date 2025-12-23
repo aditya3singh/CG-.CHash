@@ -4,7 +4,7 @@ class Patient
     public string Name { get; set; }
     public int Age { get; set; }
 
-    private string medicalHistory = ""; // ✅ FIX
+    private string medicalHistory = ""; 
 
     public Patient()
     {
