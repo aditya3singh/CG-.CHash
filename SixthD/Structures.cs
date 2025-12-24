@@ -1,0 +1,26 @@
+using System;
+
+struct StockPrice{
+    public string Symbol;
+    public decimal Price;
+
+}
+//WHY IN THE CASE OF THE STRUCT THE DATA IS NOT CHANGED BUT IN THE CASE OF THE CLASS IT IS CHANGED
+//BECAUSE STRUCTS ARE VALUE TYPES AND CLASSES ARE REFERENCE TYPES
+//WHY THEY COMEUP WITH STRUCTS BECAUSE THEY ARE LIGHTWEIGHT AND FASTER TO ACCESS THAN CLASSES
+//HOW WIILL YOU DECIDE WHETHER TO USE A STRUCT OR A CLASS
+//IF THE OBJECT IS SMALL AND IMMUTABLE USE STRUCTS OTHERWISE USE CLASSES
+//WHAT IS GARBAGE COLLECTION
+//GARBAGE COLLECTION IS A PROCESS IN WHICH THE MEMORY OCCUPIED BY THE OBJECTS THAT ARE NO LONGER IN USE IS FREED UP BY THE .NET RUNTIME
+
+class Trade
+{
+    public string symbol;
+    public int quantity;
+    public int tradeID;
+
+
+}
+
+//in the main program create a stockPrice struct and a trade object for both object, copy in to the relevant data and print it to the console.
+

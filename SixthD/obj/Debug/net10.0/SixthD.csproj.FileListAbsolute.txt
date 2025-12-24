@@ -1,0 +1,15 @@
+C:\Users\singh\Downloads\CG-.CHash\SixthD\bin\Debug\net10.0\SixthD.exe
+C:\Users\singh\Downloads\CG-.CHash\SixthD\bin\Debug\net10.0\SixthD.deps.json
+C:\Users\singh\Downloads\CG-.CHash\SixthD\bin\Debug\net10.0\SixthD.runtimeconfig.json
+C:\Users\singh\Downloads\CG-.CHash\SixthD\bin\Debug\net10.0\SixthD.dll
+C:\Users\singh\Downloads\CG-.CHash\SixthD\bin\Debug\net10.0\SixthD.pdb
+C:\Users\singh\Downloads\CG-.CHash\SixthD\obj\Debug\net10.0\SixthD.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\singh\Downloads\CG-.CHash\SixthD\obj\Debug\net10.0\SixthD.AssemblyInfoInputs.cache
+C:\Users\singh\Downloads\CG-.CHash\SixthD\obj\Debug\net10.0\SixthD.AssemblyInfo.cs
+C:\Users\singh\Downloads\CG-.CHash\SixthD\obj\Debug\net10.0\SixthD.csproj.CoreCompileInputs.cache
+C:\Users\singh\Downloads\CG-.CHash\SixthD\obj\Debug\net10.0\SixthD.sourcelink.json
+C:\Users\singh\Downloads\CG-.CHash\SixthD\obj\Debug\net10.0\SixthD.dll
+C:\Users\singh\Downloads\CG-.CHash\SixthD\obj\Debug\net10.0\refint\SixthD.dll
+C:\Users\singh\Downloads\CG-.CHash\SixthD\obj\Debug\net10.0\SixthD.pdb
+C:\Users\singh\Downloads\CG-.CHash\SixthD\obj\Debug\net10.0\SixthD.genruntimeconfig.cache
+C:\Users\singh\Downloads\CG-.CHash\SixthD\obj\Debug\net10.0\ref\SixthD.dll

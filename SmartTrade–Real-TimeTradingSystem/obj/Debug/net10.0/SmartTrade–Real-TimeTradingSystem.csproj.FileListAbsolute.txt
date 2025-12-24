@@ -1,0 +1,15 @@
+C:\Users\singh\Downloads\CG-.CHash\SmartTrade–Real-TimeTradingSystem\obj\Debug\net10.0\SmartTrade–Real-TimeTradingSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\singh\Downloads\CG-.CHash\SmartTrade–Real-TimeTradingSystem\obj\Debug\net10.0\SmartTrade–Real-TimeTradingSystem.AssemblyInfoInputs.cache
+C:\Users\singh\Downloads\CG-.CHash\SmartTrade–Real-TimeTradingSystem\obj\Debug\net10.0\SmartTrade–Real-TimeTradingSystem.AssemblyInfo.cs
+C:\Users\singh\Downloads\CG-.CHash\SmartTrade–Real-TimeTradingSystem\obj\Debug\net10.0\SmartTrade–Real-TimeTradingSystem.csproj.CoreCompileInputs.cache
+C:\Users\singh\Downloads\CG-.CHash\SmartTrade–Real-TimeTradingSystem\obj\Debug\net10.0\SmartTrade–Real-TimeTradingSystem.sourcelink.json
+C:\Users\singh\Downloads\CG-.CHash\SmartTrade–Real-TimeTradingSystem\bin\Debug\net10.0\SmartTrade–Real-TimeTradingSystem.exe
+C:\Users\singh\Downloads\CG-.CHash\SmartTrade–Real-TimeTradingSystem\bin\Debug\net10.0\SmartTrade–Real-TimeTradingSystem.deps.json
+C:\Users\singh\Downloads\CG-.CHash\SmartTrade–Real-TimeTradingSystem\bin\Debug\net10.0\SmartTrade–Real-TimeTradingSystem.runtimeconfig.json
+C:\Users\singh\Downloads\CG-.CHash\SmartTrade–Real-TimeTradingSystem\bin\Debug\net10.0\SmartTrade–Real-TimeTradingSystem.dll
+C:\Users\singh\Downloads\CG-.CHash\SmartTrade–Real-TimeTradingSystem\bin\Debug\net10.0\SmartTrade–Real-TimeTradingSystem.pdb
+C:\Users\singh\Downloads\CG-.CHash\SmartTrade–Real-TimeTradingSystem\obj\Debug\net10.0\SmartTrade–Real-TimeTradingSystem.dll
+C:\Users\singh\Downloads\CG-.CHash\SmartTrade–Real-TimeTradingSystem\obj\Debug\net10.0\refint\SmartTrade–Real-TimeTradingSystem.dll
+C:\Users\singh\Downloads\CG-.CHash\SmartTrade–Real-TimeTradingSystem\obj\Debug\net10.0\SmartTrade–Real-TimeTradingSystem.pdb
+C:\Users\singh\Downloads\CG-.CHash\SmartTrade–Real-TimeTradingSystem\obj\Debug\net10.0\SmartTrade–Real-TimeTradingSystem.genruntimeconfig.cache
+C:\Users\singh\Downloads\CG-.CHash\SmartTrade–Real-TimeTradingSystem\obj\Debug\net10.0\ref\SmartTrade–Real-TimeTradingSystem.dll
