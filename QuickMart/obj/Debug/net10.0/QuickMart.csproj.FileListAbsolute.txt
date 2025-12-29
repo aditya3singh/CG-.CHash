@@ -1,0 +1,15 @@
+C:\Users\singh\Downloads\CG-.CHash\QuickMart\obj\Debug\net10.0\QuickMart.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\singh\Downloads\CG-.CHash\QuickMart\obj\Debug\net10.0\QuickMart.AssemblyInfoInputs.cache
+C:\Users\singh\Downloads\CG-.CHash\QuickMart\obj\Debug\net10.0\QuickMart.AssemblyInfo.cs
+C:\Users\singh\Downloads\CG-.CHash\QuickMart\obj\Debug\net10.0\QuickMart.csproj.CoreCompileInputs.cache
+C:\Users\singh\Downloads\CG-.CHash\QuickMart\obj\Debug\net10.0\QuickMart.sourcelink.json
+C:\Users\singh\Downloads\CG-.CHash\QuickMart\bin\Debug\net10.0\QuickMart.exe
+C:\Users\singh\Downloads\CG-.CHash\QuickMart\bin\Debug\net10.0\QuickMart.deps.json
+C:\Users\singh\Downloads\CG-.CHash\QuickMart\bin\Debug\net10.0\QuickMart.runtimeconfig.json
+C:\Users\singh\Downloads\CG-.CHash\QuickMart\bin\Debug\net10.0\QuickMart.dll
+C:\Users\singh\Downloads\CG-.CHash\QuickMart\bin\Debug\net10.0\QuickMart.pdb
+C:\Users\singh\Downloads\CG-.CHash\QuickMart\obj\Debug\net10.0\QuickMart.dll
+C:\Users\singh\Downloads\CG-.CHash\QuickMart\obj\Debug\net10.0\refint\QuickMart.dll
+C:\Users\singh\Downloads\CG-.CHash\QuickMart\obj\Debug\net10.0\QuickMart.pdb
+C:\Users\singh\Downloads\CG-.CHash\QuickMart\obj\Debug\net10.0\QuickMart.genruntimeconfig.cache
+C:\Users\singh\Downloads\CG-.CHash\QuickMart\obj\Debug\net10.0\ref\QuickMart.dll

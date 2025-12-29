@@ -1,0 +1,15 @@
+C:\Users\singh\Downloads\CG-.CHash\Day9\bin\Debug\net10.0\Day9.exe
+C:\Users\singh\Downloads\CG-.CHash\Day9\bin\Debug\net10.0\Day9.deps.json
+C:\Users\singh\Downloads\CG-.CHash\Day9\bin\Debug\net10.0\Day9.runtimeconfig.json
+C:\Users\singh\Downloads\CG-.CHash\Day9\bin\Debug\net10.0\Day9.dll
+C:\Users\singh\Downloads\CG-.CHash\Day9\bin\Debug\net10.0\Day9.pdb
+C:\Users\singh\Downloads\CG-.CHash\Day9\obj\Debug\net10.0\Day9.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\singh\Downloads\CG-.CHash\Day9\obj\Debug\net10.0\Day9.AssemblyInfoInputs.cache
+C:\Users\singh\Downloads\CG-.CHash\Day9\obj\Debug\net10.0\Day9.AssemblyInfo.cs
+C:\Users\singh\Downloads\CG-.CHash\Day9\obj\Debug\net10.0\Day9.csproj.CoreCompileInputs.cache
+C:\Users\singh\Downloads\CG-.CHash\Day9\obj\Debug\net10.0\Day9.sourcelink.json
+C:\Users\singh\Downloads\CG-.CHash\Day9\obj\Debug\net10.0\Day9.dll
+C:\Users\singh\Downloads\CG-.CHash\Day9\obj\Debug\net10.0\refint\Day9.dll
+C:\Users\singh\Downloads\CG-.CHash\Day9\obj\Debug\net10.0\Day9.pdb
+C:\Users\singh\Downloads\CG-.CHash\Day9\obj\Debug\net10.0\Day9.genruntimeconfig.cache
+C:\Users\singh\Downloads\CG-.CHash\Day9\obj\Debug\net10.0\ref\Day9.dll

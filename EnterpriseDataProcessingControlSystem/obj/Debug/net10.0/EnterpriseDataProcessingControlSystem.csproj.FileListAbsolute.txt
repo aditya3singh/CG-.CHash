@@ -1,0 +1,15 @@
+C:\Users\singh\Downloads\CG-.CHash\EnterpriseDataProcessingControlSystem\bin\Debug\net10.0\EnterpriseDataProcessingControlSystem.exe
+C:\Users\singh\Downloads\CG-.CHash\EnterpriseDataProcessingControlSystem\bin\Debug\net10.0\EnterpriseDataProcessingControlSystem.deps.json
+C:\Users\singh\Downloads\CG-.CHash\EnterpriseDataProcessingControlSystem\bin\Debug\net10.0\EnterpriseDataProcessingControlSystem.runtimeconfig.json
+C:\Users\singh\Downloads\CG-.CHash\EnterpriseDataProcessingControlSystem\bin\Debug\net10.0\EnterpriseDataProcessingControlSystem.dll
+C:\Users\singh\Downloads\CG-.CHash\EnterpriseDataProcessingControlSystem\bin\Debug\net10.0\EnterpriseDataProcessingControlSystem.pdb
+C:\Users\singh\Downloads\CG-.CHash\EnterpriseDataProcessingControlSystem\obj\Debug\net10.0\EnterpriseDataProcessingControlSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\singh\Downloads\CG-.CHash\EnterpriseDataProcessingControlSystem\obj\Debug\net10.0\EnterpriseDataProcessingControlSystem.AssemblyInfoInputs.cache
+C:\Users\singh\Downloads\CG-.CHash\EnterpriseDataProcessingControlSystem\obj\Debug\net10.0\EnterpriseDataProcessingControlSystem.AssemblyInfo.cs
+C:\Users\singh\Downloads\CG-.CHash\EnterpriseDataProcessingControlSystem\obj\Debug\net10.0\EnterpriseDataProcessingControlSystem.csproj.CoreCompileInputs.cache
+C:\Users\singh\Downloads\CG-.CHash\EnterpriseDataProcessingControlSystem\obj\Debug\net10.0\EnterpriseDataProcessingControlSystem.sourcelink.json
+C:\Users\singh\Downloads\CG-.CHash\EnterpriseDataProcessingControlSystem\obj\Debug\net10.0\EnterpriseDataProcessingControlSystem.dll
+C:\Users\singh\Downloads\CG-.CHash\EnterpriseDataProcessingControlSystem\obj\Debug\net10.0\refint\EnterpriseDataProcessingControlSystem.dll
+C:\Users\singh\Downloads\CG-.CHash\EnterpriseDataProcessingControlSystem\obj\Debug\net10.0\EnterpriseDataProcessingControlSystem.pdb
+C:\Users\singh\Downloads\CG-.CHash\EnterpriseDataProcessingControlSystem\obj\Debug\net10.0\EnterpriseDataProcessingControlSystem.genruntimeconfig.cache
+C:\Users\singh\Downloads\CG-.CHash\EnterpriseDataProcessingControlSystem\obj\Debug\net10.0\ref\EnterpriseDataProcessingControlSystem.dll
