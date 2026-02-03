@@ -68,6 +68,8 @@ INSERT INTO Transactions VALUES
 
 
 use TopBrainsAssignments;
+
+--use TopBrainsAssignments;
 /*
 
 -- 1
@@ -82,7 +84,7 @@ The procedure should return both values in a single result.
 */
 
 Create proc GetTransactionSummary
-@StartDate Date,
+@StartDate Date, 
 @EndDate Date,
 @AccountId int
 
@@ -95,8 +97,8 @@ from Transactions where AccountID = @AccountId and TransactionDate between @Star
 end;
 
 EXEC GetTransactionSummary 
-    @StartDate = '2024-01-01',
-    @EndDate = '2024-01-31',
+    @StartDate = '2024-01-01', 
+    @EndDate = '2024-01-31', 
     @AccountID = 101;
 
 
@@ -114,46 +116,34 @@ USE TopBrainsAssignments;
 create proc processmonthlybonus
 as
 begin
-    set nocount on;
-
-insert into bonus (bonusid, accountid, bonusmonth, bonusyear, bonusamount, createddate)
+    insert into bonus (accountid, bonusmonth, bonusyear, bonusamount, createddate)
     select
-        row_number() over (
-            order by monthlydata.accountid,
-                 monthlydata.bonusmonth,
-                 monthlydata.bonusyear
-        )
-        + isnull((select max(bonusid) from bonus), 0),
-    monthlydata.accountid,
-    monthlydata.bonusmonth,
-    monthlydata.bonusyear,
+        transactions.accountid,
+        month(transactions.transactiondate),
+        year(transactions.transactiondate),
         1000,
-    getdate()
-    from
-    (
-        select
-            transactions.accountid,
-        month(transactions.transactiondate) as bonusmonth,
-        year(transactions.transactiondate) as bonusyear
-        from transactions
-        where transactions.transactiontype = 'deposit'
-        group by
-            transactions.accountid,
+        getdate()
+    from transactions
+    where transactions.transactiontype = 'deposit'
+    group by
+        transactions.accountid,
         month(transactions.transactiondate),
         year(transactions.transactiondate)
-        having sum(transactions.amount) > 50000
-    ) as monthlydata
-    where not exists
-    (
-        select 1
-        from bonus
-        where bonus.accountid = monthlydata.accountid
-          and bonus.bonusmonth = monthlydata.bonusmonth
-          and bonus.bonusyear  = monthlydata.bonusyear
-    );
+    having sum(transactions.amount) > 50000
+       and not exists
+       (
+           select 1
+           from bonus
+           where bonus.accountid = transactions.accountid
+             and bonus.bonusmonth = month(transactions.transactiondate)
+             and bonus.bonusyear  = year(transactions.transactiondate)
+       );
 end;
 
-exec processmonthlybonus;
+
+exec processmonthlybonuss;
+
+select * from bonus;
 
 
 --question 3
@@ -164,12 +154,12 @@ begin
 create table #userinfo (customername nvarchar(50), accountnumber nvarchar(50), currentbalance decimal(12,2));
 insert into #userinfo (customername, accountnumber, currentbalance)
 select customers.customername, accounts.accountnumber,
-sum( case when transactions.transactiontype = 'deposit' then transactions.amount when transactions.transactiontype = 'withdraw' then - transactions.amount else 0 end ) as currentbalance
+sum( case when transactions.transactiontype = 'deposit' then transactions.amount when transactions.transactiontype = 'withdraw' then -transactions.amount else 0 end ) as currentbalance
 
 from customers inner join accounts on customers.customerid = accounts.customerid inner join transactions  on transactions.accountid = accounts.accountid
-group by customers.customername, accounts.accountnumber;
+group by customers.customername,accounts.accountnumber;
 
-select* from #userinfo
+select * from #userinfo
 end
 
 exec usp_userInfo
