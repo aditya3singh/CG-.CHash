@@ -32,13 +32,29 @@ namespace University_Course_Registration_System
         public bool IsFull()
         {
             // TODO: Return true if CurrentEnrollment >= MaxCapacity
-            throw new NotImplementedException();
+
+
+            if (CurrentEnrollment >= MaxCapacity)
+            {
+                return true;
+            }
+            return false;
+
+
         }
 
         public bool HasPrerequisites(List<string> completedCourses)
         {
             // TODO: Check if ALL prerequisites exist in completedCourses
-            throw new NotImplementedException();
+            foreach (string prerequisite in Prerequisites)
+            {
+                if (!completedCourses.Contains(prerequisite))
+                {
+                    return false;
+                }
+            }
+            return true;
+
         }
 
         public void EnrollStudent()
@@ -46,18 +62,27 @@ namespace University_Course_Registration_System
             // TODO:
             // 1. Throw InvalidOperationException if course is full
             // 2. Otherwise increment CurrentEnrollment
-            throw new NotImplementedException();
+            if (IsFull())
+            {
+                throw new InvalidOperationException("Course is full. Cannot enroll student.");
+            }
+            CurrentEnrollment++;
+
         }
 
         public void DropStudent()
         {
             // TODO: Decrement CurrentEnrollment only if greater than zero
-            throw new NotImplementedException();
+            if (CurrentEnrollment > 0)
+            {
+                CurrentEnrollment--;
+            }
         }
 
         public string GetEnrollmentInfo()
         {
             return $"{CurrentEnrollment}/{MaxCapacity}";
         }
+
     }
 }
