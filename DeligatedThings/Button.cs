@@ -1,28 +1,27 @@
-//using System;
+using System;
 
-//class Button
-//{
-//    public delegate void ClickHandler();
-//    public event ClickHandler Clicked;
-//    public void Click()
-//    {
-//        Clicked?.Invoke();
-//    }
+class Button
+{
+    public delegate void ClickHandler();
+    public event ClickHandler Clicked;
+    public void Click()
+    {
+        Clicked?.Invoke();
+    }
+    static void OnClickedHandler1()
+    {
+        Console.WriteLine("1");
+    }
+    static void OnClickedHandler2()
+    {
+        Console.WriteLine("2");
 
-//    static void OnClickedHandler1()
-//    {
-//        Console.WriteLine("1");
-//    }
-//    static void OnClickedHandler2()
-//    {
-//        Console.WriteLine("2");
-
-//    }
-//    static void OnClickedHandler3()
-//    {
-//        Console.WriteLine("3");
-//    }
-//}
+    }
+    static void OnClickedHandler3()
+    {
+        Console.WriteLine("3");
+    }
+}
 
 
 

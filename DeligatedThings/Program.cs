@@ -155,7 +155,7 @@ namespace EcommerceAssessment
         static void Main()
         {
             Repository<Order> repo = new Repository<Order>();
-
+                 
             repo.Add(new Order { OrderId = 1, CustomerName = "Alice", Amount = 5000 });
             repo.Add(new Order { OrderId = 2, CustomerName = "Bob", Amount = 2000 });
             repo.Add(new Order { OrderId = 3, CustomerName = "Charlie", Amount = 8000 });
