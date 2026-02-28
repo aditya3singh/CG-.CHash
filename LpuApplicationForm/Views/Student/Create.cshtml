@@ -1,0 +1,462 @@
+@model LpuApplicationForm.Models.StudentModel
+@{
+    ViewData["Title"] = Model.StudentId == 0 ? "New Application" : "Edit Application";
+}
+
+<style>
+    body {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+    }
+
+    .form-container {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 20px;
+    }
+
+    .form-card {
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        overflow: hidden;
+    }
+
+    .form-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 40px;
+        text-align: center;
+        position: relative;
+    }
+
+    .form-header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.1)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+        background-size: cover;
+        opacity: 0.3;
+    }
+
+    .form-header-content {
+        position: relative;
+        z-index: 1;
+    }
+
+    .form-header h1 {
+        font-size: 36px;
+        font-weight: 800;
+        margin: 0 0 10px 0;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .form-header p {
+        font-size: 16px;
+        opacity: 0.95;
+        margin: 0;
+    }
+
+    .form-body {
+        padding: 40px;
+    }
+
+    .section-header {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin: 30px 0 20px 0;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #e2e8f0;
+    }
+
+    .section-icon {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        color: white;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    }
+
+    .section-title {
+        font-size: 20px;
+        font-weight: 700;
+        color: #2d3748;
+        margin: 0;
+    }
+
+    .form-group {
+        margin-bottom: 25px;
+    }
+
+    .form-label {
+        font-weight: 600;
+        color: #2d3748;
+        margin-bottom: 8px;
+        display: block;
+        font-size: 14px;
+    }
+
+    .required-field::after {
+        content: " *";
+        color: #f56565;
+    }
+
+    .form-control, .form-select {
+        border: 2px solid #e2e8f0;
+        border-radius: 10px;
+        padding: 12px 16px;
+        font-size: 15px;
+        transition: all 0.3s;
+        background: #f7fafc;
+    }
+
+    .form-control:focus, .form-select:focus {
+        border-color: #667eea;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        background: white;
+        outline: none;
+    }
+
+    .form-control::placeholder {
+        color: #a0aec0;
+    }
+
+    textarea.form-control {
+        resize: vertical;
+        min-height: 100px;
+    }
+
+    .photo-upload-area {
+        border: 3px dashed #cbd5e0;
+        border-radius: 15px;
+        padding: 30px;
+        text-align: center;
+        background: #f7fafc;
+        transition: all 0.3s;
+        cursor: pointer;
+    }
+
+    .photo-upload-area:hover {
+        border-color: #667eea;
+        background: #edf2f7;
+    }
+
+    .photo-upload-icon {
+        font-size: 48px;
+        color: #a0aec0;
+        margin-bottom: 15px;
+    }
+
+    .photo-preview {
+        max-width: 200px;
+        border: 4px solid #667eea;
+        border-radius: 15px;
+        margin: 20px auto;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .declaration-box {
+        background: linear-gradient(135deg, #edf2f7 0%, #e2e8f0 100%);
+        border-left: 4px solid #667eea;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 30px 0;
+    }
+
+    .declaration-box p {
+        margin: 0;
+        color: #4a5568;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .form-actions {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        margin-top: 40px;
+        padding-top: 30px;
+        border-top: 2px solid #e2e8f0;
+    }
+
+    .btn-submit {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        padding: 15px 50px;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    }
+
+    .btn-submit:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+    }
+
+    .btn-cancel {
+        background: #e2e8f0;
+        color: #4a5568;
+        border: none;
+        padding: 15px 40px;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s;
+    }
+
+    .btn-cancel:hover {
+        background: #cbd5e0;
+        color: #2d3748;
+    }
+
+    .text-danger {
+        color: #f56565;
+        font-size: 13px;
+        margin-top: 5px;
+        display: block;
+    }
+
+    .alert {
+        border-radius: 12px;
+        padding: 15px 20px;
+        margin-bottom: 20px;
+        border: none;
+    }
+
+    .alert-danger {
+        background: linear-gradient(135deg, #fed7d7 0%, #feb2b2 100%);
+        color: #742a2a;
+    }
+
+    @@media (max-width: 768px) {
+        .form-header h1 {
+            font-size: 28px;
+        }
+
+        .form-body {
+            padding: 20px;
+        }
+
+        .form-actions {
+            flex-direction: column;
+        }
+
+        .btn-submit, .btn-cancel {
+            width: 100%;
+        }
+    }
+</style>
+
+<div class="form-container">
+    <div class="form-card">
+        <div class="form-header">
+            <div class="form-header-content">
+                <h1>🎓 @ViewData["Title"]</h1>
+                <p>Lovely Professional University - Academic Year @DateTime.Now.Year</p>
+            </div>
+        </div>
+
+        <div class="form-body">
+            @if (TempData["Error"] != null)
+            {
+                <div class="alert alert-danger alert-dismissible fade show">
+                    <strong>⚠️ Error!</strong> @TempData["Error"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            }
+
+            <form asp-action="@(Model.StudentId == 0 ? "Create" : "Edit")" method="post" enctype="multipart/form-data">
+                <input type="hidden" asp-for="StudentId" />
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+                <!-- Personal Information -->
+                <div class="section-header">
+                    <div class="section-icon">👤</div>
+                    <h2 class="section-title">Personal Information</h2>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 form-group">
+                        <label asp-for="FullName" class="form-label required-field">Full Name</label>
+                        <input asp-for="FullName" class="form-control" placeholder="Enter your full name" />
+                        <span asp-validation-for="FullName" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-3 form-group">
+                        <label asp-for="Gender" class="form-label required-field">Gender</label>
+                        <select asp-for="Gender" class="form-select">
+                            <option value="">Select</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <span asp-validation-for="Gender" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-3 form-group">
+                        <label asp-for="DOB" class="form-label required-field">Date of Birth</label>
+                        <input asp-for="DOB" class="form-control" type="date" />
+                        <span asp-validation-for="DOB" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="section-header">
+                    <div class="section-icon">📞</div>
+                    <h2 class="section-title">Contact Information</h2>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 form-group">
+                        <label asp-for="Email" class="form-label required-field">Email Address</label>
+                        <input asp-for="Email" class="form-control" type="email" placeholder="your.email@example.com" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-6 form-group">
+                        <label asp-for="Mobile" class="form-label required-field">Mobile Number</label>
+                        <input asp-for="Mobile" class="form-control" placeholder="10-digit mobile number" maxlength="10" />
+                        <span asp-validation-for="Mobile" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Address" class="form-label required-field">Residential Address</label>
+                    <textarea asp-for="Address" class="form-control" placeholder="Enter your complete address"></textarea>
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 form-group">
+                        <label asp-for="City" class="form-label required-field">City</label>
+                        <input asp-for="City" class="form-control" placeholder="City name" />
+                        <span asp-validation-for="City" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-4 form-group">
+                        <label asp-for="State" class="form-label required-field">State</label>
+                        <input asp-for="State" class="form-control" placeholder="State name" />
+                        <span asp-validation-for="State" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-4 form-group">
+                        <label asp-for="Pincode" class="form-label required-field">Pincode</label>
+                        <input asp-for="Pincode" class="form-control" placeholder="6-digit pincode" maxlength="6" />
+                        <span asp-validation-for="Pincode" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <!-- Academic Information -->
+                <div class="section-header">
+                    <div class="section-icon">📚</div>
+                    <h2 class="section-title">Academic Information</h2>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 form-group">
+                        <label asp-for="CourseApplied" class="form-label required-field">Course Applied For</label>
+                        <select asp-for="CourseApplied" class="form-select">
+                            <option value="">Select Course</option>
+                            <optgroup label="Engineering">
+                                <option value="B.Tech Computer Science">B.Tech Computer Science</option>
+                                <option value="B.Tech Mechanical">B.Tech Mechanical</option>
+                                <option value="B.Tech Civil">B.Tech Civil</option>
+                                <option value="B.Tech Electronics">B.Tech Electronics</option>
+                            </optgroup>
+                            <optgroup label="Management">
+                                <option value="BBA">BBA</option>
+                                <option value="MBA">MBA</option>
+                            </optgroup>
+                            <optgroup label="Computer Applications">
+                                <option value="BCA">BCA</option>
+                                <option value="MCA">MCA</option>
+                            </optgroup>
+                        </select>
+                        <span asp-validation-for="CourseApplied" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-4 form-group">
+                        <label asp-for="HighSchoolMarks" class="form-label required-field">10th Grade Marks (%)</label>
+                        <input asp-for="HighSchoolMarks" class="form-control" type="number" step="0.01" placeholder="0-100" />
+                        <span asp-validation-for="HighSchoolMarks" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-4 form-group">
+                        <label asp-for="IntermediateMarks" class="form-label required-field">12th Grade Marks (%)</label>
+                        <input asp-for="IntermediateMarks" class="form-control" type="number" step="0.01" placeholder="0-100" />
+                        <span asp-validation-for="IntermediateMarks" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <!-- Profile Photo -->
+                <div class="section-header">
+                    <div class="section-icon">📸</div>
+                    <h2 class="section-title">Profile Photograph</h2>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="ProfileFile" class="form-label required-field">Upload Photo</label>
+                    <div class="photo-upload-area">
+                        <div class="photo-upload-icon">📷</div>
+                        <input asp-for="ProfileFile" class="form-control" type="file" accept=".jpg,.jpeg,.png" />
+                        <p style="margin: 10px 0 0 0; color: #718096; font-size: 13px;">
+                            Requirements: 500x500 pixels, Max 3MB, JPG/PNG only
+                        </p>
+                    </div>
+                    <span asp-validation-for="ProfileFile" class="text-danger"></span>
+                    
+                    @if (Model.ProfileImage != null)
+                    {
+                        <div style="text-align: center;">
+                            <p style="margin: 20px 0 10px 0; font-weight: 600; color: #2d3748;">Current Photo:</p>
+                            @{
+                                var base64 = Convert.ToBase64String(Model.ProfileImage);
+                                var imgSrc = $"data:image/{Model.ImageExtension?.TrimStart('.')};base64,{base64}";
+                            }
+                            <img src="@imgSrc" alt="Current Profile" class="photo-preview" />
+                        </div>
+                    }
+                </div>
+
+                <!-- Declaration -->
+                <div class="section-header">
+                    <div class="section-icon">✍️</div>
+                    <h2 class="section-title">Declaration</h2>
+                </div>
+
+                <div class="declaration-box">
+                    <p>
+                        <strong>I hereby declare that:</strong> All the information provided above is true and correct to the best of my knowledge. 
+                        I understand that any false information may lead to cancellation of my admission and legal action may be taken against me.
+                    </p>
+                </div>
+
+                <!-- Form Actions -->
+                <div class="form-actions">
+                    <button type="submit" class="btn-submit">
+                        @(Model.StudentId == 0 ? "✓ Submit Application" : "✓ Update Application")
+                    </button>
+                    <a asp-action="Index" class="btn-cancel">← Back to List</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
