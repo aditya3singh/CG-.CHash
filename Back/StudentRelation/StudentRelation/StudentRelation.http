@@ -1,0 +1,108 @@
+@StudentRelation_HostAddress = https://localhost:7000
+@token = your_jwt_token_here
+
+### Register Admin User
+POST {{StudentRelation_HostAddress}}/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "email": "admin@test.com",
+  "password": "Admin@123",
+  "fullName": "Admin User",
+  "role": "Admin"
+}
+
+### Register Warden User
+POST {{StudentRelation_HostAddress}}/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "warden",
+  "email": "warden@test.com",
+  "password": "Warden@123",
+  "fullName": "Warden User",
+  "role": "Warden"
+}
+
+### Login
+POST {{StudentRelation_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "Admin@123"
+}
+
+### Get All Students
+GET {{StudentRelation_HostAddress}}/api/students
+Authorization: Bearer {{token}}
+
+### Get Student by ID
+GET {{StudentRelation_HostAddress}}/api/students/1
+Authorization: Bearer {{token}}
+
+### Create Student with Hostel
+POST {{StudentRelation_HostAddress}}/api/students
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "john@test.com",
+  "collegeName": "Engineering College",
+  "hostel": {
+    "roomNumber": "101",
+    "blockName": "A"
+  }
+}
+
+### Create Student without Hostel
+POST {{StudentRelation_HostAddress}}/api/students
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "Jane Smith",
+  "email": "jane@test.com",
+  "collegeName": "Medical College"
+}
+
+### Update Student
+PUT {{StudentRelation_HostAddress}}/api/students/1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "John Doe Updated",
+  "email": "john.updated@test.com",
+  "collegeName": "Engineering College"
+}
+
+### Delete Student
+DELETE {{StudentRelation_HostAddress}}/api/students/1
+Authorization: Bearer {{token}}
+
+### Get All Hostels
+GET {{StudentRelation_HostAddress}}/api/hostels
+Authorization: Bearer {{token}}
+
+### Get Hostel by Student ID
+GET {{StudentRelation_HostAddress}}/api/hostels/student/1
+Authorization: Bearer {{token}}
+
+### Update Hostel Room
+PUT {{StudentRelation_HostAddress}}/api/hostels/student/1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "roomNumber": "205",
+  "blockName": "B"
+}
+
+### Delete Hostel
+DELETE {{StudentRelation_HostAddress}}/api/hostels/student/1
+Authorization: Bearer {{token}}
+
+###

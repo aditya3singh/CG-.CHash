@@ -1,0 +1,100 @@
+﻿@model IEnumerable<GClientViewDB.Models.Student>
+
+@{
+    ViewData["Title"] = "Index";
+    var searchStatus = ViewData["SearchStatus"]?.ToString() ?? "";
+}
+
+<h1>Students</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
+</p>
+
+<div class="card mb-3">
+    <div class="card-header">
+        <h5>Search Students</h5>
+    </div>
+    <div class="card-body">
+        <form asp-action="Index" method="get" class="row g-3">
+            <div class="col-md-4">
+                <label for="searchName" class="form-label">Full Name</label>
+                <input type="text" id="searchName" name="searchName" class="form-control" placeholder="Search by name..." value="@ViewData["SearchName"]" />
+            </div>
+            <div class="col-md-4">
+                <label for="searchEmail" class="form-label">Email</label>
+                <input type="email" id="searchEmail" name="searchEmail" class="form-control" placeholder="Search by email..." value="@ViewData["SearchEmail"]" />
+            </div>
+            <div class="col-md-3">
+                <label for="searchStatus" class="form-label">Status</label>
+                <select id="searchStatus" name="searchStatus" class="form-select">
+                    <option value="">-- All Status --</option>
+                    <option value="Active" selected="@(searchStatus == "Active")">Active</option>
+                    <option value="Inactive" selected="@(searchStatus == "Inactive")">Inactive</option>
+                    <option value="Suspended" selected="@(searchStatus == "Suspended")">Suspended</option>
+                </select>
+            </div>
+            <div class="col-md-1 d-flex align-items-end">
+                <button type="submit" class="btn btn-info w-100">Search</button>
+            </div>
+            <div class="col-md-1 d-flex align-items-end">
+                <a asp-action="Index" class="btn btn-secondary w-100">Clear</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<table class="table table-striped"
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JoinDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedAt)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JoinDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedAt)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.StudentId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.StudentId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.StudentId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

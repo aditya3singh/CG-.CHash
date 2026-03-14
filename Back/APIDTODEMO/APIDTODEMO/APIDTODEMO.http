@@ -1,0 +1,6 @@
+@APIDTODEMO_HostAddress = http://localhost:5189
+
+GET {{APIDTODEMO_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

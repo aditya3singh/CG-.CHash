@@ -53,29 +53,28 @@ class Program
         //StringBuilder sb5 = sb4;
         //Console.WriteLine(sb5.Equals(sb4));
 
-        StringBuilder sb1 = new StringBuilder();
-        StringBuilder sb2 = new StringBuilder();
+        //StringBuilder sb1 = new StringBuilder();
+        //StringBuilder sb2 = new StringBuilder();
 
-        Console.WriteLine(sb1.Equals(sb2);
-        Console.WriteLine(sb1.ReferenceEquals(sb2));
+        //Console.WriteLine(sb1.Equals(sb2);
+        //Console.WriteLine(sb1.ReferenceEquals(sb2));
 
-        StringBuilder sb3 = sb2;
-        Console.WriteLine(sb3.Equals(sb2));
-        Console.WriteLine(sb3.ReferenceEquals(sb2));
+        //StringBuilder sb3 = sb2;
+        //Console.WriteLine(sb3.Equals(sb2));
+        //Console.WriteLine(sb3.ReferenceEquals(sb2));
 
-        Console.WriteLine(sb1 == sb2);
+        //Console.WriteLine(sb1 == sb2);
 
-        String str1 = "Hello";
-        String str2 = "Hello";
-        bool ragini = "dbkjk";
-        Console.WriteLine
-        Console.WriteLine(str1 == str2);
-        Console.WriteLine(str1.Equals(str2));
+        //String str1 = "Hello";
+        //String str2 = "Hello";
+        //bool ragini = "dbkjk";
+        //Console.WriteLine
+        //Console.WriteLine(str1 == str2);
+        //Console.WriteLine(str1.Equals(str2));
+
+
+
+
     }
 }
 
-/*
- String 
-Buffer is the temp storage
- 
- */

@@ -1,0 +1,78 @@
+@model LPUID.Models.Student
+
+@{
+    ViewData["Title"] = "Student ID Card";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg border-primary" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                <div class="card-header bg-dark text-white text-center">
+                    <h3>🎓 LPU Student ID Card</h3>
+                    <small>Lovely Professional University</small>
+                </div>
+                <div class="card-body" style="background-color: white;">
+                    <div class="text-center mb-3">
+                        @if (!string.IsNullOrEmpty(Model.ProfilePicturePath))
+                        {
+                            <img src="@Model.ProfilePicturePath" alt="Student Photo" class="rounded" style="width: 120px; height: 150px; object-fit: cover; border: 3px solid #0d6efd;" />
+                        }
+                        else
+                        {
+                            <div class="rounded d-inline-flex align-items-center justify-content-center" style="width: 120px; height: 150px; background-color: #e9ecef; border: 3px solid #0d6efd;">
+                                <i class="bi bi-person-fill" style="font-size: 50px; color: #6c757d;"></i>
+                            </div>
+                        }
+                    </div>
+                    
+                    <table class="table table-borderless table-sm">
+                        <tr>
+                            <th>Card Number:</th>
+                            <td><strong class="text-primary">@Model.IdCard.UniqueCardNumber</strong></td>
+                        </tr>
+                        <tr>
+                            <th>Application No:</th>
+                            <td>@Model.ApplicationNumber</td>
+                        </tr>
+                        <tr>
+                            <th>Full Name:</th>
+                            <td>@Model.FullName</td>
+                        </tr>
+                        <tr>
+                            <th>Email:</th>
+                            <td>@Model.Email</td>
+                        </tr>
+                        <tr>
+                            <th>Course:</th>
+                            <td>@Model.Course</td>
+                        </tr>
+                        <tr>
+                            <th>DOB:</th>
+                            <td>@(Model.DateOfBirth?.ToString("dd MMM yyyy") ?? "N/A")</td>
+                        </tr>
+                        <tr>
+                            <th>Issue Date:</th>
+                            <td>@Model.IdCard.IssueDate.ToString("dd MMM yyyy")</td>
+                        </tr>
+                    </table>
+
+                    <div class="alert alert-info text-center mt-3 mb-0">
+                        <small>This card is property of Lovely Professional University</small>
+                    </div>
+                </div>
+                <div class="card-footer text-center">
+                    <a asp-action="Dashboard" asp-route-id="@Model.Id" class="btn btn-secondary btn-sm">← Back to Dashboard</a>
+                    <button onclick="window.print()" class="btn btn-primary btn-sm">🖨️ Print ID Card</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    @@media print {
+        .btn, .card-footer { display: none; }
+        .card { border: 2px solid #000; }
+    }
+</style>

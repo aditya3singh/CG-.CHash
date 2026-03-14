@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Clinetview.Models.Course>
+
+<h2>Course List</h2>
+
+<a asp-action="Create" class="btn btn-primary mb-3">Add New Course</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.CourseId)</th>
+            <th>@Html.DisplayNameFor(model => model.Title)</th>
+            <th>@Html.DisplayNameFor(model => model.Credits)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.CourseId)</td>
+                <td>@Html.DisplayFor(modelItem => item.Title)</td>
+                <td>@Html.DisplayFor(modelItem => item.Credits)</td>
+            </tr>
+        }
+    </tbody>
+</table>

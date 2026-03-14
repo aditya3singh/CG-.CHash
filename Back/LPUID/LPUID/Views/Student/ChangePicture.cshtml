@@ -1,0 +1,71 @@
+@model LPUID.Models.Student
+
+@{
+    ViewData["Title"] = "Change Profile Picture";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg">
+                <div class="card-header bg-warning text-dark">
+                    <h4 class="mb-0">📸 Change Profile Picture</h4>
+                </div>
+                <div class="card-body">
+                    <!-- Current Picture -->
+                    <div class="text-center mb-4">
+                        <h6 class="text-muted">Current Picture:</h6>
+                        @if (!string.IsNullOrEmpty(Model.ProfilePicturePath))
+                        {
+                            <img src="@Model.ProfilePicturePath" alt="Current Picture" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover; border: 3px solid #ffc107;" />
+                        }
+                        else
+                        {
+                            <div class="rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 150px; height: 150px; background-color: #e9ecef; border: 3px solid #ffc107;">
+                                <i class="bi bi-person-fill" style="font-size: 60px; color: #6c757d;"></i>
+                            </div>
+                        }
+                    </div>
+
+                    <hr />
+
+                    <!-- Upload New Picture -->
+                    <form method="post" enctype="multipart/form-data">
+                        <div class="form-group mb-3">
+                            <label for="newPicture" class="form-label fw-bold">Select New Picture *</label>
+                            <input type="file" id="newPicture" name="newPicture" class="form-control" accept="image/*" required />
+                            <small class="text-muted">Accepted formats: JPG, PNG, GIF (Max 5MB)</small>
+                        </div>
+
+                        <!-- Preview -->
+                        <div id="previewContainer" class="text-center mb-3" style="display:none;">
+                            <h6 class="text-muted">New Picture Preview:</h6>
+                            <img id="previewImg" src="" alt="Preview" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover; border: 3px solid #28a745;" />
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-success btn-lg">
+                                <i class="bi bi-check-circle"></i> Update Picture
+                            </button>
+                            <a asp-action="Dashboard" asp-route-id="@Model.Id" class="btn btn-secondary">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('newPicture').addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                document.getElementById('previewImg').src = event.target.result;
+                document.getElementById('previewContainer').style.display = 'block';
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+</script>

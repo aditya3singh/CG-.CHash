@@ -1,0 +1,229 @@
+﻿@model LPUID.Models.Student
+
+@{
+    ViewData["Title"] = "Student Dashboard";
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <!-- Profile Card -->
+        <div class="col-md-4">
+            <div class="card shadow-lg mb-4">
+                <div class="card-header bg-primary text-white text-center">
+                    <h5 class="mb-0">👤 Student Profile</h5>
+                </div>
+                <div class="card-body text-center">
+                    <!-- Profile Picture -->
+                    @if (!string.IsNullOrEmpty(Model.ProfilePicturePath))
+                    {
+                        <img src="@Model.ProfilePicturePath" alt="Profile Picture" class="rounded-circle mb-3" style="width: 150px; height: 150px; object-fit: cover; border: 3px solid #0d6efd;" />
+                    }
+                    else
+                    {
+                        <div class="rounded-circle mb-3 d-inline-flex align-items-center justify-content-center" style="width: 150px; height: 150px; background-color: #e9ecef; border: 3px solid #0d6efd;">
+                            <i class="bi bi-person-fill" style="font-size: 60px; color: #6c757d;"></i>
+                        </div>
+                    }
+
+                    <h4 class="mt-3">@Model.FullName</h4>
+                    <p class="text-muted">@Model.Course</p>
+
+                    <!-- Change Picture Button -->
+                    <a asp-action="ChangePicture" asp-route-id="@Model.Id" class="btn btn-sm btn-warning mb-2">
+                        <i class="bi bi-pencil"></i> Change Picture
+                    </a>
+
+                    <hr />
+
+                    <!-- Basic Info -->
+                    <div class="text-start">
+                        <p><strong>Application No:</strong> @Model.ApplicationNumber</p>
+                        <p><strong>Email:</strong> @Model.Email</p>
+                        <p><strong>Phone:</strong> @(Model.PhoneNumber ?? "N/A")</p>
+                        <p><strong>DOB:</strong> @(Model.DateOfBirth?.ToString("dd MMM yyyy") ?? "N/A")</p>
+                        <p><strong>Gender:</strong> @(Model.Gender ?? "N/A")</p>
+                        <p><strong>Admission Date:</strong> @Model.AdmissionDate.ToString("dd MMM yyyy")</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="col-md-8">
+            <!-- ID Card Section -->
+            <div class="card shadow-lg mb-4">
+                <div class="card-header bg-success text-white">
+                    <h5 class="mb-0">🎫 ID Card</h5>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-info">
+                        <strong>Card Number:</strong> <span class="badge bg-primary">@Model.IdCard?.UniqueCardNumber</span>
+                    </div>
+                    <a asp-action="IdCard" asp-route-id="@Model.Id" class="btn btn-primary">
+                        <i class="bi bi-eye"></i> View ID Card
+                    </a>
+                    <button onclick="window.print()" class="btn btn-secondary">
+                        <i class="bi bi-printer"></i> Print
+                    </button>
+                </div>
+            </div>
+
+            <!-- Hostel Allocation -->
+            @if (Model.Hostel != null)
+            {
+                <div class="card shadow-lg mb-4">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="mb-0">🏠 Hostel Allocation</h5>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-borderless">
+                            <tr>
+                                <th>Block:</th>
+                                <td>@Model.Hostel.BlockName</td>
+                            </tr>
+                            <tr>
+                                <th>Room Number:</th>
+                                <td>@Model.Hostel.RoomNumber</td>
+                            </tr>
+                            <tr>
+                                <th>Floor:</th>
+                                <td>@Model.Hostel.Floor</td>
+                            </tr>
+                            <tr>
+                                <th>Bed Number:</th>
+                                <td>@(Model.Hostel.BedNumber ?? "N/A")</td>
+                            </tr>
+                            <tr>
+                                <th>Room Type:</th>
+                                <td>@(Model.Hostel.RoomType ?? "N/A")</td>
+                            </tr>
+                            <tr>
+                                <th>Warden:</th>
+                                <td>@(Model.Hostel.WardenName ?? "N/A")</td>
+                            </tr>
+                            <tr>
+                                <th>Warden Contact:</th>
+                                <td>@(Model.Hostel.WardenContact ?? "N/A")</td>
+                            </tr>
+                        </table>
+                        <a asp-action="ApplyLeave" asp-route-id="@Model.Id" class="btn btn-warning btn-sm">
+                            <i class="bi bi-calendar-event"></i> Apply for Leave
+                        </a>
+                    </div>
+                </div>
+            }
+
+            <!-- Mess Allocation -->
+            @if (Model.MessAllocation != null)
+            {
+                <div class="card shadow-lg mb-4">
+                    <div class="card-header bg-warning text-dark">
+                        <h5 class="mb-0">🍽️ Mess Allocation</h5>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Mess Name:</strong> @Model.MessAllocation.MessName</p>
+                        <p><strong>Meal Plan:</strong> @(Model.MessAllocation.MealPlan ?? "N/A")</p>
+                        <p><strong>Start Date:</strong> @Model.MessAllocation.StartDate.ToString("dd MMM yyyy")</p>
+                    </div>
+                </div>
+            }
+
+            <!-- Transport Allocation -->
+            @if (Model.TransportAllocation != null)
+            {
+                <div class="card shadow-lg mb-4">
+                    <div class="card-header bg-danger text-white">
+                        <h5 class="mb-0">🚌 Transport Allocation</h5>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-borderless">
+                            <tr>
+                                <th>Route:</th>
+                                <td>@Model.TransportAllocation.RouteNumber</td>
+                            </tr>
+                            <tr>
+                                <th>Bus Number:</th>
+                                <td>@Model.TransportAllocation.BusNumber</td>
+                            </tr>
+                            <tr>
+                                <th>Pickup Point:</th>
+                                <td>@Model.TransportAllocation.PickupPoint</td>
+                            </tr>
+                            <tr>
+                                <th>Pickup Time:</th>
+                                <td>@Model.TransportAllocation.PickupTime</td>
+                            </tr>
+                            <tr>
+                                <th>Drop Time:</th>
+                                <td>@Model.TransportAllocation.DropTime</td>
+                            </tr>
+                            <tr>
+                                <th>Monthly Fee:</th>
+                                <td>₹@Model.TransportAllocation.MonthlyFee</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            }
+
+            <!-- Semester Marks & CGPA -->
+            @if (Model.SemesterMarks != null && Model.SemesterMarks.Any())
+            {
+                <div class="card shadow-lg mb-4">
+                    <div class="card-header bg-secondary text-white">
+                        <h5 class="mb-0">📊 Academic Performance</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <div class="alert alert-success">
+                                    <h6>CGPA</h6>
+                                    <h3 class="mb-0">@ViewBag.CGPA</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h6>Semester-wise Marks:</h6>
+                        <table class="table table-striped">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Semester</th>
+                                    <th>Total Marks</th>
+                                    <th>SGPA</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var mark in Model.SemesterMarks.OrderBy(m => m.Semester))
+                                {
+                                    <tr>
+                                        <td>Sem @mark.Semester</td>
+                                        <td>@mark.TotalMarks</td>
+                                        <td><span class="badge bg-info">@mark.SGPA</span></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            }
+
+            <!-- Class Schedule -->
+            <div class="card shadow-lg mb-4">
+                <div class="card-header bg-dark text-white">
+                    <h5 class="mb-0">📅 Class Schedule</h5>
+                </div>
+                <div class="card-body">
+                    <a asp-action="Schedule" asp-route-id="@Model.Id" class="btn btn-primary">
+                        <i class="bi bi-calendar3"></i> View Schedule
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    @@media print {
+        .btn, .card-header { display: none; }
+    }
+</style>

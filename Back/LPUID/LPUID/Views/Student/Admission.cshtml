@@ -1,0 +1,139 @@
+﻿@model LPUID.ViewModels.StudentAdmissionViewModel
+
+@{
+    ViewData["Title"] = "Student Admission Form";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">🎓 LPU Student Admission Form</h3>
+                </div>
+                <div class="card-body">
+                    <form method="post" enctype="multipart/form-data">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <!-- Profile Picture Upload -->
+                        <div class="form-group mb-3">
+                            <label asp-for="ProfilePicture" class="form-label fw-bold">📸 Profile Picture *</label>
+                            <div class="input-group">
+                                <input type="file" asp-for="ProfilePicture" class="form-control" accept="image/*" required />
+                            </div>
+                            <small class="text-muted">Accepted formats: JPG, PNG, GIF (Max 5MB)</small>
+                            <span asp-validation-for="ProfilePicture" class="text-danger"></span>
+                            
+                            <!-- Image Preview -->
+                            <div id="imagePreview" class="mt-3" style="display:none;">
+                                <img id="previewImg" src="" alt="Preview" class="img-thumbnail" style="max-width: 200px; max-height: 200px;" />
+                            </div>
+                        </div>
+
+                        <hr />
+
+                        <!-- Application Number -->
+                        <div class="form-group mb-3">
+                            <label asp-for="ApplicationNumber" class="form-label fw-bold">Application Number *</label>
+                            <input asp-for="ApplicationNumber" class="form-control" placeholder="e.g., APP2024001" required />
+                            <span asp-validation-for="ApplicationNumber" class="text-danger"></span>
+                        </div>
+
+                        <!-- Full Name -->
+                        <div class="form-group mb-3">
+                            <label asp-for="FullName" class="form-label fw-bold">Full Name *</label>
+                            <input asp-for="FullName" class="form-control" placeholder="Enter your full name" required />
+                            <span asp-validation-for="FullName" class="text-danger"></span>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="form-group mb-3">
+                            <label asp-for="Email" class="form-label fw-bold">Email Address *</label>
+                            <input asp-for="Email" type="email" class="form-control" placeholder="your.email@example.com" required />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+
+                        <!-- Phone Number -->
+                        <div class="form-group mb-3">
+                            <label asp-for="PhoneNumber" class="form-label fw-bold">Phone Number</label>
+                            <input asp-for="PhoneNumber" type="tel" class="form-control" placeholder="+91-XXXXXXXXXX" />
+                            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                        </div>
+
+                        <!-- Date of Birth -->
+                        <div class="form-group mb-3">
+                            <label asp-for="DateOfBirth" class="form-label fw-bold">Date of Birth</label>
+                            <input asp-for="DateOfBirth" type="date" class="form-control" />
+                            <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+                        </div>
+
+                        <!-- Gender -->
+                        <div class="form-group mb-3">
+                            <label asp-for="Gender" class="form-label fw-bold">Gender</label>
+                            <select asp-for="Gender" class="form-select">
+                                <option value="">-- Select Gender --</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <span asp-validation-for="Gender" class="text-danger"></span>
+                        </div>
+
+                        <!-- Course -->
+                        <div class="form-group mb-3">
+                            <label asp-for="Course" class="form-label fw-bold">Course/Program *</label>
+                            <select asp-for="Course" class="form-select" required>
+                                <option value="">-- Select Course --</option>
+                                <option value="B.Tech CSE">B.Tech Computer Science</option>
+                                <option value="B.Tech ECE">B.Tech Electronics</option>
+                                <option value="B.Tech ME">B.Tech Mechanical</option>
+                                <option value="B.Tech CE">B.Tech Civil</option>
+                                <option value="BBA">BBA</option>
+                                <option value="B.Sc IT">B.Sc Information Technology</option>
+                            </select>
+                            <span asp-validation-for="Course" class="text-danger"></span>
+                        </div>
+
+                        <!-- Address -->
+                        <div class="form-group mb-3">
+                            <label asp-for="Address" class="form-label fw-bold">Address</label>
+                            <textarea asp-for="Address" class="form-control" rows="3" placeholder="Enter your address"></textarea>
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+
+                        <hr />
+
+                        <!-- Submit Button -->
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                <i class="bi bi-check-circle"></i> Submit Application
+                            </button>
+                            <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        // Image Preview
+        document.getElementById('ProfilePicture').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    document.getElementById('previewImg').src = event.target.result;
+                    document.getElementById('imagePreview').style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+}
