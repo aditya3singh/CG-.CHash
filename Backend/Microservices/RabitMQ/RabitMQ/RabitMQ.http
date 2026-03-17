@@ -1,0 +1,6 @@
+@RabitMQ_HostAddress = http://localhost:5234
+
+GET {{RabitMQ_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

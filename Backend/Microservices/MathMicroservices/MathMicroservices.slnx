@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="CubeMicroservice/CubeMicroservice.csproj" />
+  <Project Path="ProducerAPI/ProducerAPI.csproj" />
+  <Project Path="SquareMicroservice/SquareMicroservice.csproj" />
+</Solution>
