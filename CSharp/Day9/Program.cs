@@ -109,37 +109,101 @@ class Program
  */
 
 
-using System;
-using System.IO;
+//using System;
+//using System.IO;
+
+//class Program
+//{
+//    static void Main()
+//    {
+//        try
+//        {
+//            try
+//            {
+//                // Attempt to read a file
+//                File.ReadAllText("transactions.txt");
+//            }
+//            catch (IOException ioEx)
+//            {
+//                // Wrap original exception inside a custom exception
+//                throw new ApplicationException(
+//                    "Unable to load transaction data",
+//                    ioEx
+//                );
+//            }
+//        }
+//        catch (Exception ex)
+//        {
+//            Console.WriteLine("Message: " + ex.Message);
+
+//            if (ex.InnerException != null)
+//            {
+//                Console.WriteLine("Root Cause: " + ex.InnerException.Message);
+//            }
+//        }
+//    }
+//}
+
 
 class Program
 {
     static void Main()
     {
-        try
-        {
-            try
-            {
-                // Attempt to read a file
-                File.ReadAllText("transactions.txt");
-            }
-            catch (IOException ioEx)
-            {
-                // Wrap original exception inside a custom exception
-                throw new ApplicationException(
-                    "Unable to load transaction data",
-                    ioEx
-                );
-            }
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine("Message: " + ex.Message);
+        var orderService = new OrderService();
+        var emailService = new EmailService();
+        var foodService = new FoodPreparationService();
+        var deliveryService = new DeliveryService();
 
-            if (ex.InnerException != null)
-            {
-                Console.WriteLine("Root Cause: " + ex.InnerException.Message);
-            }
-        }
+        // Step 1: OrderPlaced subscriptions
+        orderService.OrderPlaced += emailService.SendEmail;
+        orderService.OrderPlaced += foodService.PrepareFood;
+
+        // Step 2: FoodPrepared subscriptions
+        foodService.FoodPrepared += deliveryService.Deliver;
+
+        // Start flow
+        orderService.PlaceOrder("Pizza");
+    }
+}
+
+public class DeliveryService
+{
+    public void Deliver(string orderId)
+    {
+        Console.WriteLine($"Order {orderId} delivered");
+    }
+}
+
+public class FoodPreparationService
+{
+    // New event
+    public event Action<string> FoodPrepared;
+
+    public void PrepareFood(string orderId)
+    {
+        Console.WriteLine($"Food prepared for order {orderId}");
+
+        // Raise next event
+        FoodPrepared?.Invoke(orderId);
+    }
+}
+
+public class EmailService
+{
+    public void SendEmail(string orderId)
+    {
+        Console.WriteLine($"Email sent for order {orderId}");
+    }
+}
+
+public class OrderService
+{
+    public event Action<string> OrderPlaced;
+
+    public void PlaceOrder(string orderId)
+    {
+        Console.WriteLine($"Order {orderId} placed");
+
+        OrderPlaced?.Invoke(orderId);
     }
 }
