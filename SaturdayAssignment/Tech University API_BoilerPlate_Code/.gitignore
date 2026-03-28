@@ -1,0 +1,44 @@
+# Build outputs
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider
+.idea/
+
+# VS Code
+.vscode/
+
+# dotnet
+*.dll
+*.pdb
+*.exe
+*.cache
+
+# NuGet
+*.nupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Scripts we don't need in repo
+run-sqlserver.sh
+setup-db.sh
+find-sqlcmd.sh
+seed-data.sh
+run-migrations.sh
